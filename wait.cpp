@@ -28,7 +28,8 @@ int main ()
   for (int i=0; i<10; ++i) {
    while (shipment_available()) std::this_thread::yield();
     std::unique_lock<std::mutex> lck(mtx);
-    cargo = 10;
+   B
+    cargo = i+1;
     cv.notify_one();
   }
 
